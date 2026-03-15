@@ -1,0 +1,5 @@
+Plugins::FilePatch.define target: "app/views/accounts/deals/show.html.erb" do
+  after_line containing: "<div class=\"relative\">" do
+    "      <div data-controller=\"test10--celebration\"\n           data-test10--celebration-deal-name-value=\"<%= @deal.name %>\"\n           data-test10--celebration-deal-value-value=\"<%= number_to_currency(@deal.value.to_f / 100) %>\"\n           <%= @deal.won? ? 'data-test10--celebration-show-value=\"true\"' : '' %>>\n      </div>"
+  end
+end
